@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jugadors.apps.JugadorsConfig',
+    'partides.apps.PartidesConfig',
+    'preguntes.apps.PreguntesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
