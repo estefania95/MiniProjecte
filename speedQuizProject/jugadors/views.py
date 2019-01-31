@@ -11,7 +11,7 @@ def home(request):
     return render(request, 'home/home.html', {})
 
 def iniciSessio(request):
-    return render(request, 'registration/iniciarSessio.html', {})
+    return render(request, 'registration/login.html', {})
 
 def joc(request):
     return render(request, 'joc/unJugador.html', {})
