@@ -8,6 +8,11 @@
   <title>Document</title>
 </head>
 <body>
-  <h6>Registre</h6>
+  <form method="POST" action="{% url 'registre' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ jugador_form.as_p }}
+    <input type="submit" value="Crear un nou compte">
+  </form>
 </body>
 </html>
