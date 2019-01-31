@@ -8,6 +8,13 @@
   <title>Document</title>
 </head>
 <body>
-  <h6>Registre</h6>
+  <form method="POST" action="{% url 'registre' %}">
+    {% csrf_token %}
+    <p>Nom usuari: {{ form.username }}</p>
+    <p>Email: {{ form.email }}</p>
+    <p>Contrasenya: {{ form.password1 }}</p>
+    <p>Confirmar contrasenya: {{ form.password2 }}</p>
+    <input type="submit" value="Crear un nou compte">
+  </form>
 </body>
 </html>
