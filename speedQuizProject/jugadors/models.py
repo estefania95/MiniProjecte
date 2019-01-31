@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 class Jugador(models.Model):
     usuari = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    numFormatges = models.IntegerField()
-    numFormatgets = models.IntegerField()
+    numFormatges = models.IntegerField(blank=True, null=True)
+    numFormatgets = models.IntegerField(blank=True, null=True)
 
 class Skin(models.Model):
     nomSkin = models.CharField(max_length=50)

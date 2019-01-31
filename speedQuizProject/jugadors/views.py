@@ -43,7 +43,7 @@ def registre(request):
 
       username = form.cleaned_data.get('username')
       password = form.cleaned_data.get('password1')
-      usuari = authenticate(username=username, password = password)
+      usuari = authenticate(username=username, password=password)
       login(request, usuari)
 
       return redirect('home')
