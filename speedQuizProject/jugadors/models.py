@@ -8,8 +8,6 @@ class Jugador(models.Model):
 
     numFormatges = models.IntegerField()
     numFormatgets = models.IntegerField()
-    def __str__(self):
-        self.usuari.username
 
 class Skin(models.Model):
     nomSkin = models.CharField(max_length=50)

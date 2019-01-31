@@ -10,7 +10,10 @@
 <body>
   <form method="POST" action="{% url 'registre' %}">
     {% csrf_token %}
-    {{ form.as_p }}
+    <p>Nom usuari: {{ form.username }}</p>
+    <p>Email: {{ form.email }}</p>
+    <p>Contrasenya: {{ form.password1 }}</p>
+    <p>Confirmar contrasenya: {{ form.password2 }}</p>
     {{ jugador_form.as_p }}
     <input type="submit" value="Crear un nou compte">
   </form>
