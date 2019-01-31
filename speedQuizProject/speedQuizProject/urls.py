@@ -19,10 +19,4 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('jugadors.urls')),
-    path('botiga/', include('jugadors.urls')),
-    path('home/', include('jugadors.urls')),
-    path('iniciSessio/', include('jugadors.urls')),
-    path('joc/', include('jugadors.urls')),
-    path('puntuacio/', include('jugadors.urls')),
-    path('registre/', include('jugadors.urls')),
 ]
