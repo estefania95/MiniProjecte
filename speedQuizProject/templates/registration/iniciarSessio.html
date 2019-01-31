@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% load static %}
+  <title>Document</title>
+</head>
+<body>
+  <h6>SESIIIO</h6>
+{% block content %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+    <p>Nom Usuari:  {{ form.username }}</p>
+    <p>Contrasenya: {{ form.password }}</p>
+
+
+
+  <input type="submit" value="login" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'botiga' %}">Lost password?</a></p>
+
+{% endblock %}
+</body>
+</html>
